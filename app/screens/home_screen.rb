@@ -1,16 +1,15 @@
 class HomeScreen < PM::FormScreen
 
         title "Search Covers"
+
           def form_data
             [{
               title: "Search For Song Covers",
               footer: "Powered by Flatiron Web Students",
-              cells: [{
-                placeholder: "Search by title",
-                type: :text,
-                },
+              cells: [
                 {
-                  placeholder: " Search by Artist",
+                  placeholder: "Enter a Genre",
+                  name: :genre,
                   type: :text,
                    "textLabel.color" => UIColor.blueColor
                 },{
@@ -25,8 +24,7 @@ class HomeScreen < PM::FormScreen
           end
 
           def submit_form(cell)
-              render_form
-              open SearchResultsScreen
+              Artist.new.results(render_form[:genre])
           end
 
 end

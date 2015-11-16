@@ -1,10 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-
-# ProMotion
 gem 'ProMotion', '~> 2.0'
 gem 'ProMotion-form'
+gem 'google-api-client'
+# gem 'trollop'
+gem 'pry'
+gem "bubble-wrap-http"
+# ProMotion
+
 # gem 'afmotion'
 # gem 'ProMotion-menu', '~> 1.0' # PM::Menu
 # gem 'ProMotion-form', '~> 0.3' # PM::FormScreen
@@ -24,7 +28,7 @@ gem 'ProMotion-form'
 # gem 'cdq', '~> 0.1'
 
 # Networking
-gem 'afmotion', '~> 2.5'
+ gem 'afmotion', '~> 2.5'
 
 # Screenshot acceptance comparison tool
 # gem 'motion-juxtapose', '~> 0.2'
