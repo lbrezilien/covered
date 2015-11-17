@@ -1,7 +1,7 @@
 class SearchResultsScreen < PM::TableScreen
 
     title "Search Results"
-    searchable
+    
     attr_accessor :info
 
     def table_data
