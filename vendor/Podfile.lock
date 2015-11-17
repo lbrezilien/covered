@@ -21,13 +21,19 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - FXForms (1.2.14)
+  - RSColorPicker (0.9.2)
+  - XLForm (3.0.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.0)
   - FXForms (~> 1.2)
+  - RSColorPicker
+  - XLForm (~> 3.0.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   FXForms: 724500c0c3f3eb3ba1004b3b83abcee55d3daf18
+  RSColorPicker: 4d71e12f8e28d44c3885fbb3ba10bc3627bdb393
+  XLForm: 7817ce29f3f259186e837bb7309ac7e5b7e9b883
 
 COCOAPODS: 0.39.0

@@ -4,6 +4,9 @@ GEM
     ProMotion (2.4.2)
       methadone (~> 1.7)
       motion_print (~> 1.0)
+    ProMotion-XLForm (0.0.10)
+      ProMotion (~> 2.0)
+      motion-cocoapods (~> 1.4)
     ProMotion-form (0.3.2)
       ProMotion (~> 2.0)
       motion-cocoapods (~> 1.4)
@@ -125,6 +128,7 @@ PLATFORMS
 
 DEPENDENCIES
   ProMotion (~> 2.0)
+  ProMotion-XLForm
   ProMotion-form
   afmotion (~> 2.5)
   bubble-wrap-http

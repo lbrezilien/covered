@@ -8,6 +8,7 @@ gem 'google-api-client'
 gem 'pry'
 gem "bubble-wrap-http"
 # ProMotion
+gem 'ProMotion-XLForm'
 
 # gem 'afmotion'
 # gem 'ProMotion-menu', '~> 1.0' # PM::Menu
