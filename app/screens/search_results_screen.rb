@@ -8,7 +8,7 @@ class SearchResultsScreen < PM::TableScreen
           [{
             cells: @items.map do |f|
                   {
-                    title: f,
+                    title: f[1],
                     action: :tap_artist,
                     arguments: { links: "#{f} by lesly" }
                   }
