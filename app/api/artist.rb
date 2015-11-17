@@ -2,9 +2,10 @@ class Artist < PM::Screen
 
   def artist_results(search_params)
     parsed_params = search_params.gsub(' ', '%20')
-    query = "q=lil%20genre:%22#{parsed_params}%22&type=artist"
+    query = "#{parsed_params}"
 
-   AFMotion::JSON.get("https://api.spotify.com/v1/search?#{query}") do |result|
+
+   AFMotion::JSON.get("https://api.spotify.com/v1/search?q=%20genre:%22#{query}%22&type=artist") do |result|
      puts "these are the search things #{parsed_params}"
 
         if result.success?
