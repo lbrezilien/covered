@@ -19,6 +19,7 @@ GEM
     afmotion (2.6)
       motion-cocoapods (>= 1.4.1)
       motion-require (>= 0.1)
+    bubble-wrap (1.9.5)
     claide (0.9.1)
     cocoapods (0.39.0)
       activesupport (>= 4.0.2)
@@ -87,6 +88,7 @@ DEPENDENCIES
   ProMotion-XLForm
   ProMotion-form
   afmotion (~> 2.5)
+  bubble-wrap (~> 1.9.4)
   pry
   rake
 

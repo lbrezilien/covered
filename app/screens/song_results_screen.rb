@@ -11,7 +11,7 @@ class SongResultsScreen < PM::TableScreen
                   {
                     title: f[1],
                     action: :tap_song,
-                    arguments: { song_id:f[0], song_name: f[1] }
+                    arguments: { song_id:f[0], song_name: f[1], song_preview: f[2] }
                   }
                 end
           }]
@@ -25,7 +25,7 @@ class SongResultsScreen < PM::TableScreen
 
   def tap_song(args={})
     puts args
-    BW::Media.play_modal("http://www.hrupin.com/wp-content/uploads/mp3/testsong_20_sec.mp3")
+    BW::Media.play_modal(:song_preview)
     # Artist.new.song_info(args[:song_id])
     PM.logger.debug args[:links]
   end

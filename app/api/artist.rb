@@ -9,11 +9,9 @@ class Artist < PM::Screen
 
         if result.success?
           ids = []
-            result.object["artists"]["items"].each do |artist|
-              ids << artist["id"]
-            end
           names = []
             result.object["artists"]["items"].each do |artist|
+              ids << artist["id"]
               names << artist["name"]
             end
             list = ids.zip(names)
@@ -33,12 +31,12 @@ class Artist < PM::Screen
         if result.success?
           # puts result.object
           ids = []
-            result.object["items"].each do |album|
-              ids << album["id"]
-            end
           names = []
             result.object["items"].each do |album|
-              names << album["name"]
+              if !names.include?(album["name"])
+                ids << album["id"]
+                names << album["name"]
+              end
             end
             list = ids.zip(names)
           # puts "this is the  of items #{list}"
@@ -57,14 +55,14 @@ class Artist < PM::Screen
         if result.success?
           # puts result.object
           ids = []
+          names = []
+          previews = []
             result.object["items"].each do |song|
               ids << song["id"]
-            end
-          names = []
-            result.object["items"].each do |song|
               names << song["name"]
+              previews << song["preview_url"]
             end
-            list = ids.zip(names)
+            list = ids.zip(names,previews)
             puts list
           # puts "this is the  of items #{list}"
             open_song_info(list)
