@@ -1,16 +1,17 @@
 class SearchResultsScreen < PM::TableScreen
 
     title "Search Results"
-    
+
     attr_accessor :info
 
     def table_data
           [{
             cells: @items.map do |f|
+
                   {
                     title: f[1],
                     action: :tap_artist,
-                    arguments: { links: "#{f} by lesly" }
+                    arguments: { artist_id:f[0], artist_name: f[1] }
                   }
                 end
           }]
@@ -22,6 +23,8 @@ class SearchResultsScreen < PM::TableScreen
   end
 
   def tap_artist(args={})
+    puts args
+    Artist.new.album_results(args[:artist_id])
     PM.logger.debug args[:links]
   end
 end
