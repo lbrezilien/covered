@@ -102,10 +102,14 @@ class Artist < PM::Screen
     puts @list
   end
 
+
   def open_song_info(list)
     @list = list
     open SongResultsScreen.new(info:@list)
     puts @list
+
+#     open SearchResultsScreen.new(nav_bar: true, info:@list)
+# >>>>>>> a3fb3b107367980e93d1bdc7bf763bba4fafb6af
   end
 
   def view_song(list)
