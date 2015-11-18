@@ -3,12 +3,11 @@ source 'https://rubygems.org'
 gem 'rake'
 gem 'ProMotion', '~> 2.0'
 gem 'ProMotion-form'
-gem 'google-api-client'
 # gem 'trollop'
 gem 'pry'
-gem "bubble-wrap-http"
 # ProMotion
 gem 'ProMotion-XLForm'
+# gem "bubble-wrap", "~> 1.9.4"
 
 # gem 'afmotion'
 # gem 'ProMotion-menu', '~> 1.0' # PM::Menu

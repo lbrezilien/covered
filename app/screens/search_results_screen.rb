@@ -7,7 +7,6 @@ class SearchResultsScreen < PM::TableScreen
     def table_data
           [{
             cells: @items.map do |f|
-
                   {
                     title: f[1],
                     action: :tap_artist,
@@ -15,6 +14,8 @@ class SearchResultsScreen < PM::TableScreen
                   }
                 end
           }]
+
+
     end
 
   def on_load

@@ -3,6 +3,8 @@ $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project/template/ios'
 require "rubygems"
 require 'bundler'
+require 'bubble-wrap/media'
+
 Bundler.require
 
 Motion::Project::App.setup do |app|

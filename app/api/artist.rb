@@ -93,30 +93,27 @@ class Artist < PM::Screen
   def open_new_table_view(list)
     puts list
     @list = list
-    open ArtistResultsScreen.new(info:@list)
+    open ArtistResultsScreen.new(info:@list, nav_bar:true)
   end
 
   def open_new_song_table(list)
     @list = list
-    open AlbumResultsScreen.new(info:@list)
+    open AlbumResultsScreen.new(info:@list, nav_bar:true)
     puts @list
   end
 
 
   def open_song_info(list)
     @list = list
-    open SongResultsScreen.new(info:@list)
+    open SongResultsScreen.new(info:@list, nav_bar:true)
     puts @list
 
-#     open SearchResultsScreen.new(nav_bar: true, info:@list)
-# >>>>>>> a3fb3b107367980e93d1bdc7bf763bba4fafb6af
   end
 
   def view_song(list)
     @list = list
-    open SongScreen.new(info:@list)
+    open SongScreen.new(info:@list, nav_bar:true)
     puts @list
   end
 
 end
-
