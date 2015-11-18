@@ -1,8 +1,12 @@
 class AlbumResultsScreen < PM::TableScreen
 
-    title "Search Results"
+    title "Album Results"
 
     attr_accessor :info
+
+    def on_load
+      set_nav_bar_button :left, title: "New Search"
+    end
 
     def table_data
           [{
@@ -19,6 +23,7 @@ class AlbumResultsScreen < PM::TableScreen
 
 
   def on_load
+       set_nav_bar_button :left, title: "New Search", action: :open_search_screen
        @items = @info
        update_table_data
   end
@@ -27,5 +32,9 @@ class AlbumResultsScreen < PM::TableScreen
     puts args
     Artist.new.song_results(args[:album_id])
     PM.logger.debug args[:links]
+  end
+
+  def open_search_screen
+    open HomeScreen
   end
 end

@@ -1,8 +1,9 @@
 class SongResultsScreen < PM::TableScreen
 
-    title "Search Results"
-
+    title "Song Results"
     attr_accessor :info
+
+
 
     def table_data
           [{
@@ -19,6 +20,7 @@ class SongResultsScreen < PM::TableScreen
 
 
   def on_load
+      set_nav_bar_button :left, title: "New Search", action: :open_search_screen
        @items = @info
        update_table_data
   end
@@ -28,5 +30,9 @@ class SongResultsScreen < PM::TableScreen
     BW::Media.play_modal("http://www.hrupin.com/wp-content/uploads/mp3/testsong_20_sec.mp3")
     # Artist.new.song_info(args[:song_id])
     PM.logger.debug args[:links]
+  end
+
+  def open_search_screen
+    open HomeScreen
   end
 end

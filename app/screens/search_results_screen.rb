@@ -14,12 +14,11 @@ class SearchResultsScreen < PM::TableScreen
                   }
                 end
           }]
-
-
     end
 
   def on_load
-      set_nav_bar_button :left, title: "New Search", action: :back_to_search
+      set_nav_bar_button :left, title: "New Search", action: :back
+
        @items = @info
        update_table_data
   end
