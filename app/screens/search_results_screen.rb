@@ -18,6 +18,7 @@ class SearchResultsScreen < PM::TableScreen
     end
 
   def on_load
+      set_nav_bar_button :left, title: "New Search", action: :back_to_search
        @items = @info
        update_table_data
   end
@@ -26,6 +27,10 @@ class SearchResultsScreen < PM::TableScreen
     puts args
     Artist.new.album_results(args[:artist_id])
     PM.logger.debug args[:links]
+  end
+
+  def back_to_search
+    open HomeScreen
   end
 end
 

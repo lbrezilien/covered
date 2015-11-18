@@ -14,7 +14,7 @@ class HomeScreen < PM::XLFormScreen
                 required:    true
               },
               {
-               title: 'Save',
+               title: 'Find New Music!',
                name: :save,
                type: :button,
                on_click: -> (cell) {
@@ -26,13 +26,11 @@ class HomeScreen < PM::XLFormScreen
 
 
 def my_save_method(values)
-
   Artist.new.artist_results(values["genre"])
-
 end
 
-end
 
+end
 
 
 

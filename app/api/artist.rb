@@ -57,7 +57,7 @@ class Artist < PM::Screen
     @list = list
     puts "I have reached the table opener"
 
-    open SearchResultsScreen.new(info:@list)
+    open SearchResultsScreen.new(nav_bar: true, info:@list)
   end
 
   # def open_new_table(list)
