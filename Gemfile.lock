@@ -63,6 +63,7 @@ GEM
     motion-cocoapods (1.7.6)
       cocoapods (>= 0.34)
     motion-require (0.2.0)
+    motion-tab (0.2.1)
     motion_print (1.2.0)
     nap (1.0.0)
     netrc (0.7.8)
@@ -89,6 +90,7 @@ DEPENDENCIES
   ProMotion-form
   afmotion (~> 2.5)
   bubble-wrap (~> 1.9.4)
+  motion-tab
   pry
   rake
 

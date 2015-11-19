@@ -8,6 +8,7 @@ gem 'pry'
 # ProMotion
 gem 'ProMotion-XLForm'
 gem "bubble-wrap", "~> 1.9.4"
+gem 'motion-tab'
 
 # gem 'afmotion'
 # gem 'ProMotion-menu', '~> 1.0' # PM::Menu
