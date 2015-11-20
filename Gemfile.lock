@@ -51,6 +51,7 @@ GEM
     cocoapods-try (0.5.1)
     coderay (1.1.0)
     colored (1.2)
+    dbt (1.1.5)
     escape (0.0.4)
     fuzzy_match (2.0.4)
     i18n (0.7.0)
@@ -62,6 +63,8 @@ GEM
     molinillo (0.4.0)
     motion-cocoapods (1.7.6)
       cocoapods (>= 0.34)
+    motion-kit (0.18.0)
+      dbt (~> 1.1.5)
     motion-require (0.2.0)
     motion_print (1.2.0)
     nap (1.0.0)
@@ -71,7 +74,9 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rake (10.4.2)
+    ruby_motion_query (1.6.1)
     slop (3.6.0)
+    sugarcube (3.3.7)
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -89,8 +94,11 @@ DEPENDENCIES
   ProMotion-form
   afmotion (~> 2.5)
   bubble-wrap (~> 1.9.4)
+  motion-kit (~> 0.17)
   pry
   rake
+  ruby_motion_query (~> 1.1)
+  sugarcube
 
 BUNDLED WITH
    1.10.6

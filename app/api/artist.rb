@@ -24,7 +24,8 @@ class Artist < PM::Screen
       end
     end
 
-  def album_results(search_params)
+  def album_results(search_params, pic_id)
+
    AFMotion::JSON.get("https://api.spotify.com/v1/artists/#{search_params}/albums") do |result|
      # puts "these are the search things #{parsed_params}"
 
@@ -32,14 +33,16 @@ class Artist < PM::Screen
           # puts result.object
           ids = []
           names = []
+          pics = []
             result.object["items"].each do |album|
               if !names.include?(album["name"])
                 ids << album["id"]
                 names << album["name"]
+                pics << pic_id
               end
             end
-            list = ids.zip(names)
-          # puts "this is the  of items #{list}"
+            list = ids.zip(names, pics)
+           puts "this is the  of items #{list}"
             open_new_song_table(list)
         else
           puts " there were no results"
@@ -96,8 +99,8 @@ class Artist < PM::Screen
 
   def open_new_song_table(list)
     @list = list
-    open AlbumResultsScreen.new(info:@list, nav_bar:true)
-    puts @list
+    open ProfileScreen.new(albums:@list, nav_bar:true)
+
   end
 
 

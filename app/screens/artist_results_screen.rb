@@ -5,8 +5,8 @@ class ArtistResultsScreen < PM::TableScreen
     attr_accessor :info
 
     def table_data
-          [{
-            cells: @items.map do |f|
+        @table =  [{
+            cells: @info.map do |f|
 
                   {
                     title: f[1],
@@ -19,21 +19,18 @@ class ArtistResultsScreen < PM::TableScreen
 
 
   def on_load
-       @items = @info
-       update_table_data
+      update_table_data
   end
 
+
   def tap_artist(args={})
+    puts "im going to albums"
+
     puts args
     if args[:artist_id]
-      Artist.new.album_results(args[:artist_id])
+      Artist.new.album_results(args[:artist_id],"pic_id")
       PM.logger.debug args[:links]
     end
   end
 
-  # def tap_album(args={})
-  #   puts args
-  #   Artist.new.song_results(args[:album_id])
-  #   PM.logger.debug args[:links]
-  #   end
 end
