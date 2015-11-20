@@ -1,6 +1,10 @@
 class HomeScreen < PM::XLFormScreen
   form_options on_save: :my_save_method
 
+def on_load
+  set_tab_bar_item system_item: :more
+end
+
 
   def form_data
         [{

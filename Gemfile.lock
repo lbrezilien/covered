@@ -66,6 +66,7 @@ GEM
     motion-kit (0.18.0)
       dbt (~> 1.1.5)
     motion-require (0.2.0)
+    motion-tab (0.2.1)
     motion_print (1.2.0)
     nap (1.0.0)
     netrc (0.7.8)
@@ -95,6 +96,7 @@ DEPENDENCIES
   afmotion (~> 2.5)
   bubble-wrap (~> 1.9.4)
   motion-kit (~> 0.17)
+  motion-tab
   pry
   rake
   ruby_motion_query (~> 1.1)
