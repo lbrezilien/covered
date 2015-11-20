@@ -79,7 +79,7 @@ class Artist < PM::Screen
 
   def song_info(search_params)
    AFMotion::JSON.get("https://api.spotify.com/v1/tracks/#{search_params}") do |result|
-     # puts "these are the search things #{parsed_params}"
+     puts "these are the search things #{parsed_params}"
 
         if result.success?
           ids = []
@@ -99,14 +99,14 @@ class Artist < PM::Screen
 
   def open_new_song_table(list)
     @list = list
-    open ProfileScreen.new(albums:@list, nav_bar:true)
+    open ProfileScreen.new(albums:@list, nav_bar:true, view_to_load: 'albums')
 
   end
 
 
   def open_song_info(list)
     @list = list
-    open SongResultsScreen.new(info:@list, nav_bar:true)
+    open ProfileScreen.new(albums:@list, nav_bar:true, view_to_load:'songs')
     puts @list
 
   end

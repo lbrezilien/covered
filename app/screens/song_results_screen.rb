@@ -1,7 +1,7 @@
 class SongResultsScreen < PM::TableScreen
 
     title "Song Results"
-    attr_accessor :info
+    attr_accessor :list
 
 
 
@@ -21,7 +21,7 @@ class SongResultsScreen < PM::TableScreen
 
   def on_load
       set_nav_bar_button :left, title: "New Search", action: :open_search_screen
-       @items = @info
+       @items = @list
        update_table_data
   end
 
