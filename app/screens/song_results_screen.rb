@@ -23,7 +23,6 @@ class SongResultsScreen < PM::TableScreen
   end
 
   def tap_song(args={})
-    puts args
     BW::Media.play_modal(:song_preview)
     PM.logger.debug args[:links]
   end

@@ -24,10 +24,9 @@ class ArtistResultsScreen < PM::TableScreen
 
   def tap_artist(args={})
     puts "im going to albums"
-
     puts args
     if args[:artist_id]
-      Album.new.album_results(args[:artist_id],"pic_id")
+      Album.new.album_results(args[:artist_id], args[:artist_name])
       PM.logger.debug args[:links]
     end
   end

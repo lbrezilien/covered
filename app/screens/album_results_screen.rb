@@ -5,7 +5,8 @@ class AlbumResultsScreen < PM::TableScreen
   attr_accessor :list
 
   def on_load
-    set_nav_bar_button :left, title: "New Search"
+    @items = @list
+    update_table_data
   end
 
   def table_data
@@ -20,19 +21,9 @@ class AlbumResultsScreen < PM::TableScreen
     }]
   end
 
-  def on_load
-     set_nav_bar_button :left, title: "New Search", action: :open_search_screen
-     @items = @list
-     update_table_data
-  end
-
   def tap_album(args={})
-    puts args
     SongResults.new.song_results(args[:album_id])
     PM.logger.debug args[:links]
   end
 
-  def open_search_screen
-    open HomeScreen
-  end
 end

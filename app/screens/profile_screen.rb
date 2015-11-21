@@ -20,16 +20,54 @@ class ProfileScreen < PM::Screen
   end
 end
 
-class HomeLayout < MK::Layout
+# class HomeLayout < MK::Layout
   
-  attr_accessor :pic_id
+#   attr_accessor :pic_id
 
-  view :movies_view
+#   view :movies_view
   
+# =======
+#     title "Artists Profile"
+#     attr_accessor :artists, :albums, :view_to_load
+#     def on_load
+#         @layout = HomeLayout.new(root: self.view)
+#         @view_to_load == 'albums' ? @layout.artist_name = @albums[0][2] : @layout.artist_name = @albums[0][1]
+#         @layout.movies_view = movies_screen.view
+#         @layout.build
+#     end
+
+
+
+#     def movies_screen
+#       if @view_to_load == 'albums'
+#             @movies_screen ||= begin
+#             m = AlbumResultsScreen.new(list:@albums )
+#             self.addChildViewController m
+#             m.parent_screen = self # Automatically a weak reference
+#             m
+#             end
+#       else
+#         @movies_screen ||= begin
+#         m = SongResultsScreen.new(list:@albums )
+#         self.addChildViewController m
+#         m.parent_screen = self # Automatically a weak reference
+#         m
+#         end
+#       end
+
+#     end
+
+# end
+
+
+class HomeLayout < MK::Layout
+  view :movies_view
+  view :artist_name
+
   def layout
     root :home do
       add UIImageView, :profile_image
-      add UILabel, :profession
+      add UILabel, :artist_name
       add movies_view, :movies
     end
   end
@@ -47,24 +85,24 @@ class HomeLayout < MK::Layout
     constraints do
       left 20
       top 84
-      width 100
-      height 100
+      width 150
+      height 150
     end
   end
 
-  def profession_style
-    puts "this is the id #{@pic_id}"
-    text "Jim Carrey"
-    font UIFont.boldSystemFontOfSize(20)
+  def artist_name_style
+    # puts "this is the id #{@artist_name}"
+    text @artist_name
+    font UIFont.boldSystemFontOfSize(40)
     constraints do
-      top 118
+      top 148
       right_of(:profile_image).plus(20)
       height 30
     end
   end
 
   def movies_style
-    top 200
+    top 260
     left 0
     right "100%"
   end
