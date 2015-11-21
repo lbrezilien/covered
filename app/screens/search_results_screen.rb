@@ -1,23 +1,27 @@
 class SearchResultsScreen < PM::TableScreen
 
-    title "Search Results"
+  title "Search Results"
 
-    attr_accessor :info
+  attr_accessor :info
 
-    def table_data
-          [{
-            cells: @items.map do |f|
-                  {
-                    title: f[1],
-                    action: :tap_artist,
-                    arguments: { artist_id:f[0], artist_name: f[1] }
-                  }
-                end
-          }]
-    end
+  def table_data
+    [{
+      cells: @items.map do |f|
+        {
+          title: f[1],
+          action: :tap_artist,
+          arguments: { artist_id:f[0], artist_name: f[1] }
+        }
+      end
+    }]
+  end
+
+  def go_to_search
+    open HomeScreen
+  end
 
   def on_load
-      set_nav_bar_button :left, title: "New Search", action: :back
+      set_nav_bar_button :left, title: "New Search", action: :go_to_search
 
        @items = @info
        update_table_data
@@ -27,10 +31,6 @@ class SearchResultsScreen < PM::TableScreen
     puts args
     Artist.new.album_results(args[:artist_id])
     PM.logger.debug args[:links]
-  end
-
-  def back_to_search
-    open HomeScreen
   end
 end
 
