@@ -99,7 +99,7 @@ DEPENDENCIES
   motion-tab
   pry
   rake
-  ruby_motion_query (~> 1.1)
+  ruby_motion_query
   sugarcube
 
 BUNDLED WITH

@@ -9,7 +9,7 @@ gem 'pry'
 gem 'ProMotion-XLForm'
 gem "bubble-wrap", "~> 1.9.4"
 gem 'motion-tab'
-
+gem 'ruby_motion_query'
 # gem 'afmotion'
 # gem 'ProMotion-menu', '~> 1.0' # PM::Menu
 # gem 'ProMotion-form', '~> 0.3' # PM::FormScreen
@@ -23,7 +23,7 @@ gem 'sugarcube', require: [ 'sugarcube-common' ]
 gem 'motion-kit', '~> 0.17'
 
 # Front end toolkit
-gem 'ruby_motion_query', '~> 1.1'
+# gem 'ruby_motion_query', '~> 1.1'
 
 # CoreData
 # gem 'cdq', '~> 0.1'
