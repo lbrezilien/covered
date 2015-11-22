@@ -6,6 +6,7 @@ class HomeScreen < PM::Screen
     # Sets a top of 0 to be below the navigation control, it's best not to do this
     # self.edgesForExtendedLayout = UIRectEdgeNone
 
+
     rmq.stylesheet = HomeStylesheet
     init_nav
 
@@ -13,6 +14,8 @@ class HomeScreen < PM::Screen
 
     # Create your UIViews here
     @search = rmq.append(UITextField, :manual_search).validates(:presence).focus.get
+
+    rmq.append(UILabel, :welcome_label)
 
     rmq.append(UIButton, :submit_button).on(:touch) do
       search_api(@search.text)
@@ -62,13 +65,6 @@ class HomeScreen < PM::Screen
 
   def init_nav
     self.title = 'Find New Music'
-
-    self.navigationItem.tap do |nav|
-      nav.leftBarButtonItem = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemAction,
-                                                                           target: self, action: :nav_left_button)
-      nav.rightBarButtonItem = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemRefresh,
-                                                                           target: self, action: :nav_right_button)
-    end
   end
 
   def nav_left_button

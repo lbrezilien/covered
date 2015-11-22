@@ -1,4 +1,4 @@
-class HomeStylesheet < ApplicationStylesheet
+class SearchResultsStylesheet < ApplicationStylesheet
 
   def setup
     # Add sytlesheet specific setup stuff here.

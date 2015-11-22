@@ -1,9 +1,9 @@
 class ArtistResultsScreen < PM::TableScreen
 
-  title "Search Results"
+  title "Your Artists"
 
   attr_accessor :info
-
+  
   def table_data
     @table =  [{
         cells: @info.map do |f|
@@ -18,8 +18,15 @@ class ArtistResultsScreen < PM::TableScreen
   end
 
   def on_load
+    self.navigationItem.tap do |nav|
+      nav.leftBarButtonItem = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemRefresh,
+                                                                           target: self, action: :nav_left_button)
+    end
       update_table_data
-      
+  end
+
+  def nav_left_button
+    open HomeScreen
   end
 
   def tap_artist(args={})
