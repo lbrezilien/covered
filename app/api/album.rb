@@ -1,4 +1,4 @@
-class Album < PM::Screen 
+class Album < PM::Screen
 
   def album_results(search_params, pic_id)
    AFMotion::JSON.get("https://api.spotify.com/v1/artists/#{search_params}/albums") do |result|
@@ -6,7 +6,7 @@ class Album < PM::Screen
         ids = []
         names = []
         pics = []
-    
+
       if result.success?
           result.object["items"].each do |album|
             if !names.include?(album["name"])
@@ -26,6 +26,6 @@ class Album < PM::Screen
 
   def open_new_song_table(list)
     @list = list
-    open ProfileScreen.new(albums:@list, nav_bar:true)
+    open ProfileScreen.new(info:@list, nav_bar:true, view_to_load: 'albums')
   end
 end

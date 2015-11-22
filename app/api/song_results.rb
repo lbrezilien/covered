@@ -1,4 +1,4 @@
-class SongResults < PM::Screen  
+class SongResults < PM::Screen
 
   def song_results(search_params)
 
@@ -24,6 +24,6 @@ class SongResults < PM::Screen
 
   def open_song_info(list)
     @list = list
-    open SongResultsScreen.new(info:@list, nav_bar:true)
+    open ProfileScreen.new(info:@list, nav_bar:true, view_to_load:'songs')
   end
 end

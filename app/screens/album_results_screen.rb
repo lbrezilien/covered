@@ -22,6 +22,8 @@ class AlbumResultsScreen < PM::TableScreen
   end
 
   def tap_album(args={})
+    puts 'im goign to the songs in this album'
+    puts args
     SongResults.new.song_results(args[:album_id])
     PM.logger.debug args[:links]
   end
