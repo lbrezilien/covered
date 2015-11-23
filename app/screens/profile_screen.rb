@@ -4,6 +4,7 @@ class ProfileScreen < PM::Screen
 
   attr_accessor :artists, :info, :view_to_load
     def on_load
+        set_nav_bar_button :left, title: "New Search", action: :open_search_screen
         @layout = ProfileLayout.new(root: self.view)
         @view_to_load == 'albums' ? @layout.artist_name = @info[0][2] : @layout.artist_name = @info[0][3]
         @layout.movies_view = movies_screen.view
@@ -20,24 +21,23 @@ class ProfileScreen < PM::Screen
       open HomeScreen
     end
 
-
 end
 
-def movies_screen
-  if @view_to_load == 'albums'
-        @movies_screen ||= begin
-        m = AlbumResultsScreen.new(list:@info )
-        self.addChildViewController m
-        m.parent_screen = self
-        m
-        end
-  else
-        @movies_screen ||= begin
-        m = SongResultsScreen.new(info:@info )
-        self.addChildViewController m
-        m.parent_screen = self
-        m
-        end
-  end
+  def movies_screen
+    if @view_to_load == 'albums'
+          @movies_screen ||= begin
+          m = AlbumResultsScreen.new(list:@info )
+          self.addChildViewController m
+          m.parent_screen = self
+          m
+          end
+    else
+          @movies_screen ||= begin
+          m = SongResultsScreen.new(info:@info )
+          self.addChildViewController m
+          m.parent_screen = self
+          m
+          end
+    end
 
 end
