@@ -1,10 +1,15 @@
 class ProfileScreen < PM::Screen
-
-  title "Profile"
-
   attr_accessor :artists, :info, :view_to_load
+
+
+    title "Profile"
+
+
     def on_load
-        set_nav_bar_button :left, title: "New Search", action: :open_search_screen
+        @artist_name = @info[0][3] || @info[0][2]
+
+
+
         @layout = ProfileLayout.new(root: self.view)
         @view_to_load == 'albums' ? @layout.artist_name = @info[0][2] : @layout.artist_name = @info[0][3]
         @layout.movies_view = movies_screen.view
@@ -14,6 +19,11 @@ class ProfileScreen < PM::Screen
           nav.leftBarButtonItem = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemDone,
                                                                                target: self, action: :nav_left_button)
         end
+
+        rmq.stylesheet = ProfileStylesheet
+        rmq.stylesheet.name = @artist_name
+        rmq(self.view).apply_style :root_view
+        @label = rmq.append(UILabel, :name_label)
 
     end
 

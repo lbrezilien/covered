@@ -5,7 +5,7 @@ class ProfileLayout < MK::Layout
   def layout
     root :home do
       add UIImageView, :profile_image
-      add UILabel, :artist_name
+      # add UILabel, :artist_name
       add movies_view, :movies
     end
   end
@@ -15,29 +15,29 @@ class ProfileLayout < MK::Layout
   end
 
   def profile_image_style
-    image "2pac.jpg".uiimage
+    image "anonymous.jpg".uiimage
     clips_to_bounds true
     layer do
-      corner_radius 50.0
+      corner_radius 10.0
     end
     constraints do
-      left 20
+      left 10
       top 84
-      width 150
-      height 150
+      width 180
+      height 180
     end
   end
 
-  def artist_name_style
-    # puts "this is the id #{@artist_name}"
-    text @artist_name
-    font UIFont.boldSystemFontOfSize(24)
-    constraints do
-      top 148
-      right_of(:profile_image).plus(20)
-      height 30
-    end
-  end
+  # def artist_name_style
+  #   # puts "this is the id #{@artist_name}"
+  #   text @artist_name
+  #   font UIFont.boldSystemFontOfSize(24)
+  #   constraints do
+  #     top 148
+  #     right_of(:profile_image).plus(20)
+  #     height 30
+  #   end
+  # end
 
   def movies_style
     top 260
