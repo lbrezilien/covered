@@ -15,7 +15,7 @@ class ProfileLayout < MK::Layout
   end
 
   def profile_image_style
-    image "jimcarrey".uiimage
+    image "2pac.jpg".uiimage
     clips_to_bounds true
     layer do
       corner_radius 50.0
@@ -31,7 +31,7 @@ class ProfileLayout < MK::Layout
   def artist_name_style
     # puts "this is the id #{@artist_name}"
     text @artist_name
-    font UIFont.boldSystemFontOfSize(40)
+    font UIFont.boldSystemFontOfSize(24)
     constraints do
       top 148
       right_of(:profile_image).plus(20)

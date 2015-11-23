@@ -15,15 +15,18 @@ class Artist < PM::Screen
           end
           list = ids.zip(names)
           puts list.class
-          open_new_table_view(list)
+          open_new_table_view(search_params,list)
       else
         puts "Sorry! There were no results"
       end
     end
   end
 
-  def open_new_table_view(list)
+  def open_new_table_view(params,list)
+    puts list
     @list = list
-    open ArtistResultsScreen.new(info:@list, nav_bar:true)
+    open BaseResultScreen.new(reload:params, info:@list, nav_bar:true)
+
+    # open ArtistResultsScreen.new(info:@list, nav_bar:true)
   end
 end
